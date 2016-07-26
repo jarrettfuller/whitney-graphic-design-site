@@ -285,7 +285,8 @@
 		padding: 0px;
 		font-size: 15px;
 		line-height: 140%;
-		width: 100%;
+		width: 70%;
+		float: right;
         }
     .font-sans-serif .post-content {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -341,12 +342,17 @@
     .tag:hover {
         color: black;
         }
+    .description {
+        float: left;
+        width: 25%;
+    }
     .description h4 {
         padding-bottom: 0px;
     }
     .description p {
         font-weight: normal;
         padding-top: 0px;
+        width: 100%;
     }
     
         
@@ -447,9 +453,10 @@
 		    float: left;
 		}
 		.permalink-page .photo-post-photo {
-			max-width: 100%;
-			width: 100%; /* IMAGE WIDTH PERMALINK PAGE */
+			max-width: 70%;
+			width: 70%; /* IMAGE WIDTH PERMALINK PAGE */
 			height: auto;
+			float: right;
 		}
         
 /*----------PAGINATION-----------*/
@@ -564,6 +571,65 @@
 /*----------RELATED-----------*/
 
 .related {
+    width: 1072px;
+    margin-top: 50px;
+    margin-left:-21px;
+    margin-right: -21px;
+}
+.related h4 {
+    padding-left: 21px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.related li {
+    list-style: none;
+}
+.related li:nth-child(n+5) {
+    display: none;
+}
+.related img {
+    width: 337px;
+    padding: 0px;
+        padding-left: 20px;
+        float: left;
+}
+        
+/*-----------------------------*/
+/*----------TABLET-------------*/
+/*-----------------------------*/
+    
+@media (min-width: 751px) and (max-width: 1080px) {
+
+    .header { 
+        width: 692px; 
+        padding-left: 0px; 
+        padding-right: 0px; 
+        margin: auto;
+    }
+
+    .description { width: 75%; float: none;}
+    p   { width: 90% }
+    .text { {block:SubmitPage}width: 75%;{/block:SubmitPage} }
+    .main { 
+        {block:IndexPage}margin-left: -10px;{/block:IndexPage}
+        width: 692px;
+    }
+    
+    .permalink-page .photo-post-photo {
+		max-width: 100%;
+		width: 100%; /* IMAGE WIDTH PERMALINK PAGE */
+		height: auto;
+		float: none;
+		}
+		
+	.post-content {
+		width:100%;
+		float: none;
+        }
+        
+   /*----------RELATED-----------*/
+
+.related {
     width: 740px;
     margin-top: 50px;
     margin-left:-21px;
@@ -585,28 +651,8 @@
     padding: 0px;
         padding-left: 20px;
         float: left;
-}
+}     
         
-/*-----------------------------*/
-/*----------TABLET-------------*/
-/*-----------------------------*/
-    
-@media (min-width: 751px) and (max-width: 1080px) {
-
-    .header { 
-        width: 692px; 
-        padding-left: 0px; 
-        padding-right: 0px; 
-        margin: auto;
-    }
-
-    .description { width: 50%; }
-    p   { width: 90% }
-    .text { {block:SubmitPage}width: 75%;{/block:SubmitPage} }
-    .main { 
-        {block:IndexPage}margin-left: -10px;{/block:IndexPage}
-        width: 692px;
-    }
 }
         
 /*----------------------------*/
@@ -618,7 +664,7 @@
             position: relative;
             padding-bottom: 25px;
         }
-        .header { margin: auto;  width: 350px; padding-left: 20px;}
+    .header { margin: auto;  width: 350px; padding-left: 20px;}
     .site-name {
         width: 100%;
         padding-bottom: 15px;
@@ -636,7 +682,7 @@
         line-height: 16px;
         }  
         
-            a.submit-link-1 {
+    a.submit-link-1 {
         text-decoration: none;
         {block:TagPage}
             display:none;
@@ -664,7 +710,17 @@
         margin-right: 0px;
     }
 
-        
+    .permalink-page .photo-post-photo {
+		max-width: 100%;
+		width: 100%; /* IMAGE WIDTH PERMALINK PAGE */
+		height: auto;
+		float: none;
+		}
+	.post-content {
+		width:100%;
+		float: none;
+        }
+
 .description {
         width: 90%;
         float: none;
@@ -779,20 +835,12 @@
 <ul id="xpages" class="post-page">
 <a href="javascript:history.back()"><img src="http://static.tumblr.com/aoxtg3p/9zooal1mj/x.png"></a>
 </ul>
+ <section class="clear"></section>   
 	  {/block:PermalinkPagination}
-<!----
-    {block:PermalinkPagination}
-	  <ul id="xpages" class="post-page">
-		{block:NextPost}
-		    <li class="next n-page"><a href="{NextPost}"><img src="http://static.tumblr.com/aoxtg3p/kUKo85v27/left.png"></a></li>
-		{/block:NextPost}
-		{block:PreviousPost}
-		    <li class="prev p-page"><span class="s"></span><a href="{PreviousPost}"><img src="http://static.tumblr.com/aoxtg3p/C1Qo85uxn/right.png"></a></li>
-		{/block:PreviousPost}
-	  </ul>
-	  {/block:PermalinkPagination}
------>
+
     {/block:PermalinkPage}
+                
+        <!-------DESCRIPTION--------->
                 
                  {block:PermalinkPage}    
         
@@ -872,7 +920,7 @@
         </div>
     {/block:Text}
         
-                   
+ <section class="clear"></section>                  
 
 {block:PermalinkPage}
 
