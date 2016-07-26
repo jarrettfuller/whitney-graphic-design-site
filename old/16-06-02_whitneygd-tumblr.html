@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+ <!--
+	
+	theme two version 1.2 by homemade themes
+	created: december 2013, http://homemadethemes.tumblr.com
+	
+  -->
+
+<html><head>
+
+<title>{title}</title>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<link rel="shortcut icon" href="{Favicon}">
+<meta http-equiv="X-UA-Compatiblebl" content="IE=edge,chrome=1">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+<meta name="viewport" content="width=device-width">
+ 
+<!-- DEFAULT VARIABLES -->
+<meta name="color:Background" content="#FFFFFF" />
+<meta name="color:Text" content="#000000" />
+<meta name="color:Link" content="#333333"/>
+<meta name="color:Link Hover" content="#292929" />
+<meta name="image:Background" content="" />
+<meta name="if:Infinite Scroll" content="1"/>
+<meta name="if:Rounded Photos" content="0"/>
+<meta name="if:Show Blog Title" content="1"/>
+<meta name="if:Show Description" content="1"/>
+<meta name="if:Show Photo Permalinks" content="1"/>
+<meta name="if:Show Photo Captions" content="0"/>
+<meta name="text:Ask Title" content="Message" />
+<meta name="text:Text Online User Counter" content="" />
+
+<!-- <script type="text/javascript"
+src="http://static.tumblr.com/ek9ly4s/ZPLmx9glq/jquery-latest-homemadethemes.js"></script> -->
+
+
+<style type="text/css">
+
+@font-face {
+    font-family: 'hg-t55';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.svg#Haas Grot Text Web") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-d65';
+    src: url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.eot");
+    src: url("../../fonts/Haas Grot Disp-65 Medium.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.svg#Haas Grot Disp Web") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-t75';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.svg#Haas Grot Text Web") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal
+}
+* {
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    height:103%;}
+
+body, p {
+	font-family: "hg-t55", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-size: 13px;
+	color:black;
+    -webkit-font-smoothing: antialiased;
+}
+p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 50%;
+    line-height: 15px;
+}
+h1 {
+    font-size: 25px;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+h2 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 0px;
+    line-height: .9em;
+}
+h3 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #999;
+    line-height: .9em;
+}
+a {
+	text-decoration:none;
+	color:{color:text};
+}
+a:link, a:active, a:visited{
+	color: {color:Link};
+	text-decoration: none;
+}
+ 
+a:hover{
+	color:{color:link hover};}
+ 
+#content{
+	margin:auto;
+	margin-top:50px;
+	padding-bottom:10px;
+	padding-left: -5px;
+    padding-right: -5px;
+	{block:IndexPage}width:90%;{/block:IndexPage}
+	{block:PermalinkPage}width:90%;{/block:PermalinkPage}}
+ 
+#header{
+    margin-bottom: 10px;
+	z-index:999999999999999;
+	top:35px;
+	display:block;
+	position:relative;
+	max-width:90%;
+	margin:auto;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 25px;
+}
+.text {
+    padding: -5px;
+    margin: -5px;
+    width: 100%;
+    padding-bottom: 20px;
+}	
+#footer{
+    height:50px;
+    max-width:90%;
+    margin:auto;
+    position:relative;
+    margin-top: 10px;
+}
+.current-page {
+    margin-top: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    padding-top: 7px;
+    background-color: black;
+    color: white;
+}
+.jump-page {
+    margin-top: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    padding-top: 7px;
+}
+.footer {
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.entry{
+    box-style: border-box;
+	margin:0px;
+	margin-bottom:0px;	
+	padding:5px;
+	float:left;
+	height:275px;
+	{block:IndexPage}overflow:hidden;width:25%;box-sizing: border-box;{/block:IndexPage}
+	{block:PermalinkPage}width:100%;height:auto;{/block:PermalinkPage}
+    
+}
+
+.entry img{
+    {block:IndexPage}width:20%;
+    position: 50% 50%;
+    display: block;{/block:IndexPage}}
+    {block:PermalinkPage}width: 95%; margin-top: 25px;{/block:PermalinkPage}
+    
+{block:indexpage}.photo{width:100%;height:auto;}{/block:indexpage}
+
+.photo img{
+	{block:indexpage}width:100%;{/block:indexpage}
+	{block:PermalinkPage}padding-left:-5px; margin-top: 25px;{/block:PermalinkPage}
+	}
+
+.video{
+	width:250px;
+	height:auto;}
+.nav {
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
+    padding-top: 10px; padding-bottom: 10px;
+}
+.nav a {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #999;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.nav a:hover {
+    color: black;
+}
+.nav a:first-child {
+    padding-left: 0px;
+}
+
+/*
+.photo_caption{
+	padding:5px 0px 5px 0px;
+	text-align:right;} */
+	
+#xpages{
+    margin:0 5px;
+    padding:5px 0;
+    text-align:
+    right;
+    line-height:20px}
+    
+#xpages a,#xpages span{
+    padding:5px}
+    
+#xpages li{
+    display:inline}
+    
+#xpages li.prev:first-child .s{
+    display:none}
+    
+.clear {
+  clear: both;
+  display: block;
+}
+.description {
+    padding-bottom: 25px;
+}
+.tag {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    padding-top: 7px;
+    text-transform: uppercase;
+}
+.tag:hover {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px black solid;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    padding-top: 7px;
+    text-transform: uppercase;
+}
+.btn.icon{padding-left:20px; display: none;}
+
+.photoset-wrap img { 
+    {block:IndexPage}display: none;{/block:IndexPage} 
+     {block:PermalinkPage}display: block; width: 100%;{/block:PermalinkPage}
+    width: 100%;
+}
+    
+.photoset-wrap img:first-child { display: block; width: 100%;}
+
+@media (min-width: 801px) and (max-width: 1130px) {
+.entry{
+	{block:IndexPage}overflow:hidden;width:33%; box-sizing: border-box;{/block:IndexPage}
+}
+p {
+    width: 80%;
+}
+
+}
+
+
+@media (max-width: 800px) {
+.entry{
+	{block:IndexPage}overflow:hidden;width:100%;height: auto;{/block:IndexPage}
+}
+p {
+    width: 100%;
+}
+.nav a { display: block; padding: 0px; line-height: 25px;}    
+}
+ 
+
+</style></head>
+
+<body>
+
+<!--<script type="text/javascript" src="http://static.tumblr.com/ek9ly4s/Yfzmx9hib/jquery.ms.js"></script> -->
+
+<!-- <link href="http://static.tumblr.com/aoxtg3p/ZSDo841r5/homemade-ii.css" rel="stylesheet"> -->
+
+
+
+<div id="header"><h1><a href={BlogURL}>Whitney Graphic Design</a></h1>
+
+<div class="nav">
+<a href="/tagged/retail" title="Retail" >Retail</a> 
+<a href="/tagged/ephemera" title="Ephemera" >Ephemera</a> <a href="/tagged/exhibition-graphics" title="Exhibition Graphics" >Exhibition</a>
+<a href="/tagged/signage" title="Signage" >Signage</a>
+<a href="/about" title="About" >About</a>
+</div>
+    
+</div>
+
+<div id="content">
+
+{block:Posts}
+
+<div class="entry">
+
+{block:PermalinkPage}<div class="description">
+{block:Caption}{Caption}{/block:Caption}
+<p>{block:HasTags} {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>
+{/block:Tags}{/block:hasTags}</p>
+</div>
+{/block:PermalinkPage}
+
+{block:Photo}
+{block:IndexPage}
+{Block:ifshowphotocaptions}{block:Caption}<div class="photo_caption">{Caption}</div>{/block:Caption}{/Block:ifshowphotocaptions}
+<div class="photo">{LinkOpenTag}<a href="{Permalink}"><img src="{PhotoUrl-500}" alt="{PhotoAlt}"/></a>{LinkCloseTag}</div>
+{/block:IndexPage}
+{block:PermalinkPage}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"width=100%/>{/block:PermalinkPage}
+
+{/block:Photo}
+
+{block:Photoset}
+{block:IndexPage}
+    {LinkOpenTag}<a href="{Permalink}"><div class="photoset-wrap">
+    {block:Photos}
+        <img src="{PhotoURL-HighRes}" />
+    {/block:Photos}
+    </div></a>{LinkCloseTag}
+    {/block:IndexPage}
+    
+    {block:PermalinkPage}
+    
+    {block:Photos}
+        <img src="{PhotoURL-HighRes}" width="100%" />{/block:photos}
+        
+    {/block:PermalinkPage}
+{/block:Photoset}
+
+<!-- {block:Photoset}
+<center>
+<div class="photoset">
+{block:IndexPage}{Photoset-500}<a href="{Permalink}">
+{Block:ifshowphotocaptions}{block:Caption}<div class="photo_caption">{Caption}</div>{/block:Caption}{/Block:ifshowphotocaptions}
+{/block:IndexPage}
+{block:PermalinkPage}<img src="{Photoset-HighRes}">{/block:PermalinkPage}
+</center>
+
+{/block:Photoset} -->
+
+{block:Text}
+<div class="text"><div style="padding:10px;">
+<span class="title">{Title}</span>
+{Body}
+</div></div>
+{/block:Text}
+
+{block:Link}
+<div class="text"><div style="padding:10px;">
+<a href="{URL}"><span class="title">{Name}</span></a>
+<div style="margin-left:3px;">{block:Description}{Description}{/block:Description}</div>
+</div></div>
+{block:Link}
+
+{block:Quote}
+<div class="text"><div style="padding:10px;">
+<div style="margin-left:3px;">
+{Quote}</span>
+{block:Source}<strong>{Source}</strong>{/block:Source}
+</div>
+{block:IndexPage}
+<a href="{Permalink}"><div class="xnotes">{NoteCountwithLabel}</div></a>
+{/block:IndexPage}</div></div>
+{/block:Quote}
+
+{block:Chat}
+<div class="chat">
+{block:Title}
+<a href="{Permalink}">
+<div class="title">{Title}</div></a>
+{/block:Title}
+<ul id="chat">
+{block:Lines}
+<li class="{Alt} user_{UserNumber}">
+{block:Label}
+<span class="label">{Label}</span>
+{/block:Label}
+{Line}
+</li>
+{/block:Lines}
+</ul>
+</div>
+{/block:Chat}
+
+{block:Audio}
+<div class="audio">
+{block:AlbumArt}{block:indexpage}<a href="{Permalink}">{/block:indexpage}<img src="{AlbumArtURL}" alt="{PhotoAlt}" style="{block:indexpage}width:250px;{/block:indexpage}{block:permalinkpage}width:500px;height:500px;{/block:permalinkpage}"/>{/block:AlbumArt}
+<center>
+<div style="padding:10px;>{AudioPlayerGrey}
+</div>
+{block:IndexPage}
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+
+{/block:IndexPage}
+</div></center>
+{/block:Audio}
+
+{block:Answer}
+<div class="text"><div style="padding:10px;">
+<b>Q</b>: {Question}<br>{Answer}<br><i>asked by {Asker}</i>
+{block:IndexPage}
+<a href="{Permalink}"><div class="xnotes">{NoteCountwithLabel}</div></a>
+{/block:IndexPage}</div></div>{/block:Answer}
+
+{block:Video}
+{block:IndexPage}
+<div class="video">
+<center>{Video-250}</center>
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+</div>
+{/block:IndexPage}
+
+{block:PermalinkPage}
+<center>{Video-500}</center>
+{/block:PermalinkPage}
+{block:Video}
+
+<!-- {block:IndexPage}<div class="description">
+<p>{block:Caption}{Caption}{/block:Caption}</p>
+
+</div>
+{/block:IndexPage} -->
+
+</div>
+
+
+{/block:Posts}
+
+</div>
+
+<section class="clear"></section>
+
+<div id="footer">
+
+{block:Pagination}{block:IndexPage}
+	  <ul id="xpages">
+		{block:PreviousPage}<li class="prev"><a href="{PreviousPage}">&larr; {lang:Newer}</a></li>{/block:PreviousPage}
+		{block:JumpPagination length="5"}
+		{block:CurrentPage}<li class="current-page"><span>{PageNumber}</span></li>{/block:CurrentPage}
+		{block:JumpPage}<li class="jump-page"><a href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
+		{/block:JumpPagination}
+		{block:NextPage}<li class="next"><a href="{NextPage}">></a></li>{/block:NextPage}
+	  </ul>
+	{/block:IndexPage}{/block:Pagination}
+	  {block:ifEnablePermalinkPagination}{block:PermalinkPagination}
+	  <ul id="xpages">
+		{block:NextPost}<li class="next"><a href="{NextPost}"> < </a></li>{/block:NextPost}
+		{block:PreviousPost}<li class="prev"><span class="s"> / </span><a href="{PreviousPost}">{lang:Older} &rarr;</a></li>{/block:PreviousPost}
+	  </ul>
+	  {/block:PermalinkPagination}{/block:ifEnablePermalinkPagination}
+    
+    <div class="footer">
+    <p>&copy Whitney text text text text</p>
+        
+        
+    </div>
+    
+</div>
+
+
+
+
+{block:IndexPage}
+{block:Pagination}
+<div id="pagination">
+{block:NextPage}
+<a id="nextPage" href="{NextPage}"></a>
+{/block:NextPage}
+{block:PreviousPage}
+<a href="{PreviousPage}"></a>
+{/block:PreviousPage}
+</div>
+{/block:Pagination}
+{/block:IndexPage}
+
+</body></html><!-- END OF THEME -->

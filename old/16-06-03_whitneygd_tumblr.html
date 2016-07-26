@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html><head>
+
+<title>{block:PermalinkPage}{block:PostTitle}
+{PostTitle}
+{/block:PostTitle}—{/block:PermalinkPage}
+{title}
+</title>
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<link rel="shortcut icon" href="{Favicon}">
+<meta http-equiv="X-UA-Compatiblebl" content="IE=edge,chrome=1">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+<meta name="viewport" content="width=device-width">
+ 
+<style type="text/css">
+
+@font-face {
+    font-family: 'hg-t55';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.svg#Haas Grot Text Web") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-d65';
+    src: url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.eot");
+    src: url("../../fonts/Haas Grot Disp-65 Medium.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.svg#Haas Grot Disp Web") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-t75';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.svg#Haas Grot Text Web") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal
+}
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+body, p {
+	font-family: "hg-t55", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-size: 13px;
+	color:black;
+    -webkit-font-smoothing: antialiased;
+}
+p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 50%;
+    line-height: 15px;
+}
+h1 {
+    font-size: 25px;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+h2 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 0px;
+    line-height: .9em;
+}
+h3 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #999;
+    line-height: .9em;
+}
+a {
+	text-decoration:none;
+	color:black;
+}
+a:link, a:active, a:visited{
+	color: black;
+	text-decoration: none;
+}
+ 
+a:hover{
+	color:#999;}
+
+#content{
+	margin:auto;
+	margin-top:75px;
+	padding-bottom:10px;
+	{block:IndexPage}width:90%; padding-left: -10px;{/block:IndexPage}
+	{block:PermalinkPage}width:90%;{/block:PermalinkPage}}
+ 
+#header{
+    margin-bottom: 10px;
+	z-index:999999999999999;
+	top:50px;
+	display:block;
+	position:relative;
+	max-width:90%;
+	margin:auto;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    {block:SubmitPage}display: none;{/block:SubmitPage}
+}
+.text {
+    padding: -10px;
+    margin: -10px;
+    width: 100%;
+    padding-bottom: 20px;
+    {block:SubmitPage}width: 50%;{/block:SubmitPage}
+}	
+#footer{
+    height:50px;
+    max-width:90%;
+    margin:auto;
+    position:relative;
+    margin-top: 10px;
+}
+.current-page {
+    margin-top: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    padding-top: 7px;
+    background-color: black;
+    color: white;
+}
+.jump-page {
+    margin-top: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    padding-top: 7px;
+}
+.footer {
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.entry{
+    box-style: border-box;
+	padding-right:20px;
+	float:left;
+	height:275px;
+	{block:IndexPage}overflow:hidden;width:25%;box-sizing: border-box; margin-bottom: 20px;{/block:IndexPage}
+	{block:PermalinkPage}width:100%;height:auto; padding: 0px;{/block:PermalinkPage}
+	{block:SubmitPage}padding-top: 25px;{/block:SubmitPage}
+}
+
+.entry:nth-of-type(4n+0) {
+    padding-right: 0px;
+}
+
+.entry img{
+    {block:IndexPage}width:20%;
+
+    display: block;{/block:IndexPage}}
+    {block:PermalinkPage}width: 95%; margin-top: 25px;{/block:PermalinkPage}
+    
+{block:indexpage}.photo{width:100%;height:auto;}{/block:indexpage}
+
+.photo img{
+	{block:indexpage}width:100%; vertical-align: middle;{/block:indexpage}
+	{block:PermalinkPage}padding-left:-5px; margin-top: 25px;{/block:PermalinkPage}
+	}
+
+.video{
+	width:250px;
+	height:auto;}
+.nav {
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
+    padding-top: 10px; padding-bottom: 10px;
+}
+.nav a {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #999;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.nav a:hover {
+    color: black;
+}
+.nav a:first-child {
+    padding-left: 0px;
+}
+
+/*
+.photo_caption{
+	padding:5px 0px 5px 0px;
+	text-align:right;} */
+	
+#xpages{
+    margin:0 5px;
+    padding:5px 0;
+    text-align:
+    right;
+    line-height:20px}
+    
+#xpages a,#xpages span{
+    padding:5px}
+    
+#xpages li{
+    display:inline}
+    
+#xpages li.prev:first-child .s{
+    display:none}
+
+#xpages li img {
+    vertical-align: middle;
+    padding-bottom: 3px;
+}
+.post-page {
+    float: right;
+}
+    
+.clear {
+  clear: both;
+  display: block;
+}
+.description {
+    padding-bottom: 25px;
+    float: left;
+    width: 75%;
+    {block:HasPages}background-color: red;display: none; padding-bottom: 0px; position: fixed;{/block:HasPages}
+}
+.tag {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    padding-top: 7px;
+    text-transform: uppercase;
+}
+.tag:hover {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px black solid;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    padding-top: 7px;
+    text-transform: uppercase;
+}
+.btn.icon{padding-left:20px; display: none;}
+
+.photoset-wrap img { 
+    {block:IndexPage}display: none;{/block:IndexPage} 
+     {block:PermalinkPage}display: block; width: 100%;{/block:PermalinkPage}
+    width: 100%;
+}
+    
+.photoset-wrap img:first-child { display: block; width: 100%;}
+
+@media (min-width: 801px) and (max-width: 1130px) {
+.entry{
+	{block:IndexPage}overflow:hidden;width:33.3%; box-sizing: border-box; height: 250px;{/block:IndexPage}
+}
+.description {
+    width: 80%;
+}
+
+.entry:nth-of-type(3n+0) {
+    padding-right: 0px;
+}
+.entry:nth-of-type(4n+0) {
+    padding-right: 20px;
+}
+p {
+    width: 80%;
+}
+.text {
+    {block:SubmitPage}width: 75%;{/block:SubmitPage}
+}
+}
+
+
+@media (max-width: 800px) {
+    #header {
+        top: 25px;
+    }
+    #content {
+        margin-top: 45px;
+    }
+.entry{
+    padding-left: 0px; padding-right: 0px; padding-bottom: 15px;
+	{block:IndexPage}overflow:hidden;width:100%;height: auto; margin-bottom: 0px;{/block:IndexPage}
+}
+.description {
+    width: 100%;
+    float: none;
+}
+p {
+    width: 100%;
+}
+.nav a { display: block; padding: 0px; line-height: 25px;}    
+
+.text {
+    {block:SubmitPage}width: 100%;{/block:SubmitPage}
+} 
+
+}
+
+
+
+</style></head>
+
+<body>
+
+<div id="header"><h1><a href={BlogURL}>Whitney Graphic Design</a></h1>
+
+<div class="nav">
+<a href="/tagged/retail" title="Retail" >Retail</a> 
+<a href="/tagged/ephemera" title="Ephemera" >Ephemera</a> <a href="/tagged/exhibition-graphics" title="Exhibition Graphics" >Exhibition</a>
+<a href="/tagged/signage" title="Signage" >Signage</a>
+<a href="/about" title="About" >About</a>
+</div>
+    
+</div>
+
+<div id="content">
+
+    {block:TagPage}
+		<h2>{Tag}</h2>
+    {/block:TagPage}
+    
+    {block:SubmitPage}
+    <h2>Submit an image</h2>
+    <P>Here you can submit an image of graphic design for our site. </P>
+    {/block:SubmitPage}
+
+{block:Posts}
+
+<div class="entry">
+
+{block:Text}
+<div class="text"><div style="padding:10px;">
+<span class="title">{Title}</span>
+{Body}
+</div></div>
+{/block:Text}
+
+ {block:PermalinkPagination}
+	  <ul id="xpages" class="post-page">
+		{block:NextPost}
+		    <li class="next n-page"><a href="{NextPost}"><img src="http://static.tumblr.com/aoxtg3p/kUKo85v27/left.png"></a></li>
+		{/block:NextPost}
+		{block:PreviousPost}
+		    <li class="prev p-page"><span class="s"></span><a href="{PreviousPost}"><img src="http://static.tumblr.com/aoxtg3p/C1Qo85uxn/right.png"></a></li>
+		{/block:PreviousPost}
+	  </ul>
+	  {/block:PermalinkPagination}
+
+{block:PermalinkPage}<div class="description">
+{block:Caption}{Caption}{/block:Caption}
+<p>{block:HasTags} {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>
+{/block:Tags}{/block:hasTags}</p>
+</div>
+{/block:PermalinkPage}
+
+	  
+	  
+
+{block:Photo}
+{block:IndexPage}
+{Block:ifshowphotocaptions}{block:Caption}<div class="photo_caption">{Caption}</div>{/block:Caption}{/Block:ifshowphotocaptions}
+<div class="photo">{LinkOpenTag}<a href="{Permalink}"><img src="{PhotoUrl-500}" alt="{PhotoAlt}"/></a>{LinkCloseTag}</div>
+{/block:IndexPage}
+{block:PermalinkPage}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"width=100%/>{/block:PermalinkPage}
+
+{/block:Photo}
+
+{block:Photoset}
+{block:IndexPage}
+    {LinkOpenTag}<a href="{Permalink}"><div class="photoset-wrap">
+    {block:Photos}
+        <img src="{PhotoURL-HighRes}" />
+    {/block:Photos}
+    </div></a>{LinkCloseTag}
+    {/block:IndexPage}
+    
+    {block:PermalinkPage}
+    
+    {block:Photos}
+        <img src="{PhotoURL-HighRes}" width="100%" />{/block:photos}
+        
+    {/block:PermalinkPage}
+{/block:Photoset}
+
+{block:Link}
+<div class="text"><div style="padding:10px;">
+<a href="{URL}"><span class="title">{Name}</span></a>
+<div style="margin-left:3px;">{block:Description}{Description}{/block:Description}</div>
+</div></div>
+{block:Link}
+
+{block:Answer}
+<div class="text"><div style="padding:10px;">
+<b>Q</b>: {Question}<br>{Answer}<br><i>asked by {Asker}</i>
+{block:IndexPage}
+<a href="{Permalink}"><div class="xnotes">{NoteCountwithLabel}</div></a>
+{/block:IndexPage}</div></div>{/block:Answer}
+
+{block:Video}
+{block:IndexPage}
+<div class="video">
+<center>{Video-250}</center>
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+</div>
+{/block:IndexPage}
+
+{block:PermalinkPage}
+<center>{Video-500}</center>
+{/block:PermalinkPage}
+{block:Video}
+
+<!-- {block:IndexPage}<div class="description">
+<p>{block:Caption}{Caption}{/block:Caption}</p>
+
+</div>
+{/block:IndexPage} -->
+
+</div>
+
+{/block:Posts}
+
+
+</div>
+
+<section class="clear"></section>
+
+<div id="footer">
+
+{block:Pagination}{block:IndexPage}
+	  <ul id="xpages">
+		{block:PreviousPage}<li class="prev"><a href="{PreviousPage}"><img src="http://static.tumblr.com/aoxtg3p/kUKo85v27/left.png"></a></li>{/block:PreviousPage}
+		{block:JumpPagination length="5"}
+		{block:CurrentPage}<li class="current-page"><span>{PageNumber}</span></li>{/block:CurrentPage}
+		{block:JumpPage}<li class="jump-page"><a href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
+		{/block:JumpPagination}
+		{block:NextPage}<li class="next"><a href="{NextPage}"><img src="http://static.tumblr.com/aoxtg3p/C1Qo85uxn/right.png"></a></li>{/block:NextPage}
+	  </ul>
+	{/block:IndexPage}{/block:Pagination}
+
+    
+    <div class="footer">
+    <p>&copy 2013—<script language="javascript" type="text/javascript">
+var today = new Date()
+var year = today.getFullYear()
+document.write(year)
+            </script> Whitney text text text text | <a href="/press">Press</a> | <a href="/submit">Submit</a></p>
+        
+        
+    </div>
+    
+</div>
+
+
+
+
+{block:IndexPage}
+{block:Pagination}
+<div id="pagination">
+{block:NextPage}
+<a id="nextPage" href="{NextPage}"></a>
+{/block:NextPage}
+{block:PreviousPage}
+<a href="{PreviousPage}"></a>
+{/block:PreviousPage}
+</div>
+{/block:Pagination}
+{/block:IndexPage}
+
+</body></html><!-- END OF THEME -->

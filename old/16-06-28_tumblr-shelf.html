@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<!--
+	Otlet's Shelf v1.0 (14 July 2011)
+	http://www.otletsshelf.com/
+-->
+<html>
+	<head>
+		<title>{Title}</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+		<meta name="color:Background" content="#eaeaea">
+		<meta name="color:Border" content="#ffffff">
+		<meta name="color:Shelf" content="#ffffff">
+		<meta name="color:Hover Block" content="#000000">
+		<meta name="color:Hover Block Text" content="#ffffff">
+		<meta name="color:Header Text" content="#000000">
+		<meta name="color:Body Text" content="#7C7C7C">
+		<meta name="color:Link Text" content="#000000">
+		<meta name="image:Custom Header" content="">
+		<meta name="if:Fixed Width" content="1">
+		<meta name="if:Link Thumbnails Straight To Amazon" content="0">
+		<meta name="if:Drop Shadows On Covers" content="1">
+		<meta name="if:Show Title And Description" content="1">
+		<meta name="if:Show Description On Permalink Pages" content="1">
+		<meta name="if:Infinite Scrolling" content="1">
+		<meta name="text:Footer" content="">
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/rtiu4y7/dArlmxwc8/reset.css">
+		<style type="text/css">
+		
+		@font-face {
+    font-family: 'hg-t55';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.svg#Haas Grot Text Web") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-d65';
+    src: url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.eot");
+    src: url("../../fonts/Haas Grot Disp-65 Medium.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.svg#Haas Grot Disp Web") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-t75';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.svg#Haas Grot Text Web") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal
+    }
+    
+* {
+    padding: 0px;
+    margin: 0px;
+    }
+.clear {
+    clear: both;
+    display: block;
+    }
+		
+		
+			body {
+font-family: "hg-t55", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-size: 13px;
+	color:black;
+    -webkit-font-smoothing: antialiased;
+			}
+		p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 50%;
+    line-height: 15px;
+    }
+    
+h1 {
+    font-size: 15px;
+    font-weight: 500;
+    }
+    
+h2 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 0px;
+    line-height: .9em;
+    }
+    
+h3 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #999;
+    line-height: .9em;
+    }
+    
+a {
+	text-decoration:none;
+	color:black;
+    }
+    
+a:link, a:active, a:visited {
+	color: black;
+	text-decoration: none;
+    }
+ 
+a:hover {
+	color:#999;
+    }
+			{block:IfFixedWidth}
+				#wrapper {
+					width: 1124px;
+					margin: auto;
+				}
+			{/block:IfFixedWidth}
+			#permalink,
+			#page {
+				width: 1124px;
+				margin: 0 auto;
+			}
+			#header {
+				padding: 48px 0px;
+				text-align: left;
+			}
+			
+/*------------HEADER-------------*/
+ 
+#header {
+	z-index:999999999999999;
+	position:relative;
+	width:100%;
+    font-weight: 500;
+    padding-bottom: 50px;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-bottom: solid 1px black;
+    }
+.hero {
+    color: #999;
+}
+.site-name {
+    width: 50%;
+    float: left;
+}
+.nav {
+        width: 50%;
+        float: right;
+        text-align: right;
+    padding-bottom: 10px;
+    }
+    
+.nav a {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    padding-right: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: underline;
+    }
+    
+.nav a:hover {
+    color: #999;
+    }
+    
+.nav a:first-child {
+    padding-left: 0px;
+    }
+    
+.title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    {block:SubmitPage}display: none;{/block:SubmitPage}
+    }
+    
+.text {
+    padding: -10px;
+    margin: -10px;
+    width: 100%;
+    padding-bottom: 20px;
+    {block:SubmitPage}width: 50%;{/block:SubmitPage}
+    }
+			
+			#posts {
+				border-top: 1px solid {color:Border};
+				border-bottom: 1px solid {color:Border};
+				padding: 0px 0px;
+			}
+			#posts:after {
+			    content: ".";
+			    display: block;
+			    height: 0;
+			    clear: both;
+			    visibility: hidden;
+			}
+			.post {
+				float: left;
+				margin: 30px 0px;
+			}
+			.index #posts {
+				border-bottom: none;
+			}
+			.index .post {
+                height: 250px;
+				width: 25%;
+			}
+			.post_thumbnail td {
+				/*height: 178px;*/
+				width: 95%;
+				vertical-align: top;
+				text-align: center;
+			}
+			.post_thumbnail img {
+				vertical-align: top;
+				width: 95%;
+			}
+	.submitted img {
+    {block:IndexPage}
+        position: relative;
+    {/block:IndexPage}
+    }
+    
+.submitted::before { 
+    {block:IndexPage}
+        content: "REPOSTED";
+        position: relative;
+        top: 65px;
+        background-color: rgba(255,255,255,.8);
+        color: black;
+        font-weight: 500;
+        padding: 10px;
+        margin-top: 55px;
+        margin-left: 20px;
+        line-height: 10px;
+        border: 1px solid black;
+        z-index: 100;
+    {/block:IndexPage}
+    }
+			
+	.description {
+    padding-bottom: 25px;
+    padding-top: 0px;
+    float: left;
+    width: 75%;
+    {block:HasPages}
+        background-color: red;
+        display: none; 
+        padding-bottom: 0px; 
+        position: fixed;
+    {/block:HasPages}
+    }
+    
+		#infscr-loading {
+    {block:ifnotinfinitescroll}
+        display:none;
+        visibility: hidden;
+        opacity:0;
+    {/block:ifnotinfinitescroll}
+    position: relative;
+    z-index:999999999999999999;
+    bottom: 3px;
+    left: 50%;
+    margin-left:-16px;
+    overflow:hidden;
+    margin-bottom: 25px;
+    }
+			
+			.tag {
+    margin-right: 10px;
+    text-transform: capitalize;
+    border-bottom: 1px #999 solid;
+    }
+.tag:hover {
+    color: black;
+}
+			
+.photoset-wrap img { 
+    {block:IndexPage} display: none; {/block:IndexPage} 
+    {block:PermalinkPage}
+        display: block; 
+        width: 100%;
+    {/block:PermalinkPage}
+    width: 100%;
+    }
+    
+.photoset-wrap img:first-child { display: block; width: 100%; }
+			
+/*----------PAGINATION-----------*/
+	
+#xpages {
+    margin:0 5px;
+    padding:5px 0;
+    text-align:
+    right;
+    line-height:20px
+    }
+    
+#xpages a,#xpages span {
+    padding:5px;
+    }
+    
+#xpages li {
+    display:inline;
+    }
+    
+#xpages li.prev:first-child .s {
+    display:none;
+    }
+    
+.post-page {
+    float: right;
+    }
+			
+/*------------FOOTER-------------*/
+    
+#footer {
+    height:50px;
+    max-width:90%;
+    margin:auto;
+    position:relative;
+    {block:IndexPage}
+        display: none !important;
+        visibility: hidden;
+    {/block:IndexPage}
+    }
+    
+.footer {
+    {block:PermalinkPage}
+        border-top: 1px solid black;
+        width: 100%;
+        padding-bottom: 25px;
+    {/block:PermalinkPage}
+    {block:IndexPage}
+        display: none !important;
+        visibility: hidden;
+    {/block:IndexPage}
+    }
+    
+.footer-1 {
+    {block:PermalinkPage}
+        float: left;
+        width: 48%;
+        margin-top: 10px;
+        padding-bottom: 25px;
+    {/block:PermalinkPage}
+    }
+    
+.footer-1 p {
+    width: 100%;
+    }
+    
+.footer-2 {
+    {block:PermalinkPage}
+        float: right;
+        width: 48%;
+        margin-top: 10px;
+        padding-bottom: 25px;
+    {/block:PermalinkPage}
+    }
+    
+.categories-1 {
+    {block:PermalinkPage}
+        float: left;
+        width: 48%;
+    {/block:PermalinkPage}
+    }
+
+.categories-2 {
+    {block:PermalinkPage}
+        float: right;
+        width: 48%;
+    {/block:PermalinkPage}
+    }
+    
+.footer-2 p {
+    width: 100%;
+    }
+    
+.footer-2 li {
+    list-style: none;
+    padding-bottom: 2px;
+    }
+
+/*-----------------------------*/
+/*----------TABLET-------------*/
+/*-----------------------------*/
+    
+@media (min-width: 701px) and (max-width: 1024px) {
+    #wrapper {
+        max-width: 90%;
+    }
+    	.index .post {
+				height: 250px;
+				width: 33%;
+			}
+        }
+
+/*----------------------------*/
+/*----------MOBILE------------*/
+/*----------------------------*/
+
+@media (max-width: 700px) {
+    #header {
+        border: none;
+        }
+    .site-name {
+        width: 100%;
+        padding-bottom: 15px;
+        }
+    .nav {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid black;
+        }
+    .nav a { 
+        display: block; 
+        padding: 0px; 
+        line-height: 16px;
+        }  
+    #wrapper {
+        max-width: 90%;
+        }
+    .index .post {
+		height: auto;
+		width: 100%;
+		padding-bottom: 0px;
+		}
+
+		</style>
+		{block:IfInfiniteScrolling}
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+			<script type="text/javascript" src="http://static.tumblr.com/rtiu4y7/qsklo3euj/jquery.infinitescroll.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('#posts').infinitescroll({
+						navSelector  : "#nav",
+						nextSelector : "#nav #next_page",
+						itemSelector : "#posts .post",
+						loadingImg   : "",
+						loadingText  : "",
+						donetext     : "",
+						bufferPx     : 200
+					}, 	function(newBooks) {
+						$(newBooks).hide();
+						$(newBooks).each(function(i) {
+							$(this).delay(i*50).fadeIn(1000);
+						});
+					});
+					$(window).scroll();
+				});
+			</script>
+		{/block:IfInfiniteScrolling}
+	</head>
+	<body class="
+		{block:IndexPage}index{/block:IndexPage}
+		{block:PermalinkPage}permalink{/block:PermalinkPage}
+		{block:TagPage}tag{/block:TagPage}
+		{block:Page}page{/block:Page}">
+		<div id="wrapper">
+			<div id="header">
+
+    <div class="site-name">
+    <h1 class="museum"><a href={BlogURL}>Whitney Museum of American Art</a></h1>
+    <h1 class="hero">Graphic Design</h1>
+</div>
+
+    <div class="nav">
+        <a href="/about">About</a>
+            <a href="/submit">Tags</a>
+            <a href="http://www.whitney.org">whitney.org</a>
+        </div>
+</div>
+
+<section class="clear"></section>
+
+<!---------TITLES---------->
+    
+    {block:SubmitPage}
+        <h2>Submit an image</h2>
+        <P>Here you can submit an image of graphic design for our site. </P>
+    {/block:SubmitPage}
+
+    {block:Posts}
+        <div class = "autopagerize_page_element" >
+        <div class="entry {TagsAsClasses}">
+    {/block:Posts}
+
+    {block:Text}
+        <div class="text">
+            <div style="padding:10px;">
+            <span class="title">{Title}</span>
+    {Body}
+            </div>
+        </div>
+    {/block:Text}
+
+
+
+<!-------POSTS--------->
+
+			<ol id="posts">
+				{block:Posts}
+					{block:Photo}
+						<li class="post photo">
+							{block:IndexPage}
+								<table class="post_thumbnail">
+									<tr>
+										<td>
+											<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
+										</td>
+									</tr>
+								</table>
+							{/block:IndexPage}
+							
+							{block:PermalinkPage}
+        
+        <div class="description">
+            {block:Caption}{Caption}{/block:Caption}
+            <p>{block:HasTags} {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>
+            {/block:Tags}{/block:hasTags}</p>
+        </div>
+        
+        <!-------PAGINATION--------->
+
+    {block:PermalinkPagination}
+	  <ul id="xpages" class="post-page">
+		{block:NextPost}
+		    <li class="next n-page"><a href="{NextPost}"><img src="http://static.tumblr.com/aoxtg3p/kUKo85v27/left.png"></a></li>
+		{/block:NextPost}
+		{block:PreviousPost}
+		    <li class="prev p-page"><span class="s"></span><a href="{PreviousPost}"><img src="http://static.tumblr.com/aoxtg3p/C1Qo85uxn/right.png"></a></li>
+		{/block:PreviousPost}
+	  </ul>
+	  {/block:PermalinkPagination}
+        
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width=100%/>
+        
+        {block:Photoset}
+    {block:IndexPage}
+        {LinkOpenTag}<a href="{Permalink}">
+            <div class="photoset-wrap">
+            {block:Photos}
+                <img src="{PhotoURL-HighRes}" />
+            {/block:Photos}
+            </div></a>{LinkCloseTag}
+        {/block:IndexPage}
+        
+    {/block:Photoset}
+        
+        {block:Photos}
+                <img src="{PhotoURL-HighRes}" width="100%" />
+            {/block:photos}
+            
+        
+            
+             {block:Link}
+        <div class="text">
+        <div style="padding:10px;">
+            <a href="{URL}"><span class="title">{Name}</span></a>
+            <div style="margin-left:3px;">{block:Description}{Description}{/block:Description}</div>
+        </div>
+        </div>
+    {block:Link}
+
+    {block:Video}
+        {block:IndexPage}
+            <div class="video">
+                <center>{Video-250}</center>
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            </div>
+        {/block:IndexPage}
+    
+        {block:PermalinkPage}
+            <center>{Video-500}</center>
+        {/block:PermalinkPage}
+    {block:Video}
+    
+    {/block:PermalinkPage}
+    
+						</li>
+					{/block:Photo}
+					{block:Text}
+						<li class="post text">
+							{block:PermalinkPage}
+								<div id="page">
+									{Body}
+								</div>
+							{/block:PermalinkPage}
+						</li>
+					{/block:Text}
+				{/block:Posts}
+			</ol>
+			</div>
+			
+<section class="clear"></section>
+
+<!--------FOOTER---------->
+
+<div class="footer">
+    <div class="footer-1">
+           <p>
+           &copy 2013—<script language="javascript" type="text/javascript">
+        var today = new Date()
+        var year = today.getFullYear()
+        document.write(year)
+                    </script> Whitney text text text text <br />
+            <a href="{BlogURL}">Home</a> | <a href="/about">About</a> | <a href="/press">Press</a> | <a href="/submit">Submit</a> | <a href="http://www.whitney.org">Whitney.org</a>
+            </p>
+        </div>
+    
+    <div class="footer-2">
+        <div class="categories-1">
+            <p><h4>By Type</h4>
+            <li><a href="/tagged/retail" title="Retail" >Retail</a> </li>
+            <li><a href="/tagged/ephemera" title="Ephemera" >Ephemera</a> </li>
+            <li><a href="/tagged/exhibition-graphics" title="Exhibition Graphics" >Exhibition</a></li>
+            <li><a href="/tagged/signage" title="Signage" >Signage</a></li>
+            <li><a href="/tagged/submitted" title="Submitted" >Submitted</a></li>
+            </p>
+        </div>
+    
+        <div class="categories-1">
+            <p><h4>By Department</h4>
+            <li><a href="/tagged/retail" title="Retail" >Education</a> </li>
+            <li><a href="/tagged/ephemera" title="Ephemera" >Kids</a> </li>
+            <li><a href="/tagged/exhibition-graphics" title="Exhibition Graphics" >Marketing</a></li>
+            <li><a href="/tagged/signage" title="Signage" >Retail</a></li>
+            <li><a href="/tagged/submitted" title="Submitted" >Restaurant</a></li>
+            </p>
+        </div>
+    </div>
+</div>
+
+		</div>
+	</body>
+</html>

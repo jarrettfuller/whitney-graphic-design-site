@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--
+	Otlet's Shelf v1.0 (14 July 2011)
+	http://www.otletsshelf.com/
+-->
+<html>
+	<head>
+		<title>{Title}</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+		<meta name="color:Background" content="#eaeaea">
+		<meta name="color:Border" content="#ffffff">
+		<meta name="color:Shelf" content="#ffffff">
+		<meta name="color:Hover Block" content="#000000">
+		<meta name="color:Hover Block Text" content="#ffffff">
+		<meta name="color:Header Text" content="#000000">
+		<meta name="color:Body Text" content="#7C7C7C">
+		<meta name="color:Link Text" content="#000000">
+		<meta name="image:Custom Header" content="">
+		<meta name="if:Fixed Width" content="1">
+		<meta name="if:Link Thumbnails Straight To Amazon" content="0">
+		<meta name="if:Drop Shadows On Covers" content="1">
+		<meta name="if:Show Title And Description" content="1">
+		<meta name="if:Show Description On Permalink Pages" content="1">
+		<meta name="if:Infinite Scrolling" content="1">
+		<meta name="text:Footer" content="">
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/rtiu4y7/dArlmxwc8/reset.css">
+		<style type="text/css">
+		
+		@font-face {
+    font-family: 'hg-t55';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-55 Roman.svg#Haas Grot Text Web") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-d65';
+    src: url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.eot");
+    src: url("../../fonts/Haas Grot Disp-65 Medium.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Disp-65 Medium.svg#Haas Grot Disp Web") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'hg-t75';
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot");
+    src: url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.eot?#iefix") format("embedded-opentype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.woff") format("woff"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.ttf") format("truetype"), url("http://www.whitney.org/fonts/Haas Grot Text-75 Bold.svg#Haas Grot Text Web") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal
+    }
+    
+* {
+    padding: 0px;
+    margin: 0px;
+    }
+.clear {
+    clear: both;
+    display: block;
+    }
+		
+		
+			body {
+				font: normal 15px/21px Georgia, serif;
+				color: {color:Body Text};
+				padding: 0 0 36px;
+			}
+		p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 50%;
+    line-height: 15px;
+    }
+    
+h1 {
+    font-size: 15px;
+    font-weight: 500;
+    }
+    
+h2 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 0px;
+    line-height: .9em;
+    }
+    
+h3 {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #999;
+    line-height: .9em;
+    }
+    
+a {
+	text-decoration:none;
+	color:black;
+    }
+    
+a:link, a:active, a:visited {
+	color: black;
+	text-decoration: none;
+    }
+ 
+a:hover {
+	color:#999;
+    }
+			{block:IfFixedWidth}
+				#wrapper {
+					width: 1124px;
+					margin: auto;
+				}
+			{/block:IfFixedWidth}
+			#permalink,
+			#page {
+				width: 1124px;
+				margin: 0 auto;
+			}
+			#header {
+				padding: 48px 0px;
+				text-align: left;
+			}
+			
+			/*------------HEADER-------------*/
+ 
+#header {
+	z-index:999999999999999;
+	position:relative;
+	width:100%;
+    font-weight: 500;
+    padding-bottom: 50px;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-bottom: solid 1px black;
+    }
+.hero {
+    color: #999;
+}
+.site-name {
+    width: 50%;
+    float: left;
+}
+.nav {
+        width: 50%;
+        float: right;
+        text-align: right;
+    padding-bottom: 10px;
+    }
+    
+.nav a {
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    padding-right: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: underline;
+    }
+    
+.nav a:hover {
+    color: #999;
+    }
+    
+.nav a:first-child {
+    padding-left: 0px;
+    }
+    
+.title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "hg-d65", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    {block:SubmitPage}display: none;{/block:SubmitPage}
+    }
+    
+.text {
+    padding: -10px;
+    margin: -10px;
+    width: 100%;
+    padding-bottom: 20px;
+    {block:SubmitPage}width: 50%;{/block:SubmitPage}
+    }
+			
+			#posts {
+				border-top: 1px solid {color:Border};
+				border-bottom: 1px solid {color:Border};
+				padding: 30px 0px;
+			}
+			#posts:after {
+			    content: ".";
+			    display: block;
+			    height: 0;
+			    clear: both;
+			    visibility: hidden;
+			}
+			.post {
+				float: left;
+				margin: 30px 0px;
+			}
+			.index #posts {
+				border-bottom: none;
+			}
+			.index .post {
+				height: 250px;
+				width: 25%;
+			}
+			.post_thumbnail td {
+				/*height: 178px;*/
+				width: 95%;
+				vertical-align: top;
+				text-align: center;
+			}
+			.post_thumbnail img {
+				vertical-align: top;
+				width: 95%;
+				
+			}
+			.post_title {
+				font-family: Helvetica, Arial, sans-serif;
+				padding: 10px;
+				height: 158px;
+				width: 168px;
+			}
+			.post_title:hover {
+				border-bottom: none;
+			}
+			.post_title * {
+				display: none;
+			}
+			.post_title h1,
+			.post_title h1 a {
+				display: block;
+				color: {color:Hover Block Text};
+			}
+			.tag #posts {
+				border-bottom: 1px solid {color:Border};
+			}
+			#tag_label {
+				padding: 36px 0px;
+				border-top: 1px solid {color:Border};
+				text-align: center;
+			}
+			#tag_label h2 {
+				font: bold 2em/1.33em Helvetica, Arial, sans-serif;
+				color: {color:Header Text};
+			}
+			p {
+				margin-bottom: 0.6em;
+			}
+			#meta, #cover, #caption {
+				float: left;
+				margin: 0 36px 0 0;
+				min-height: 1px;
+			}
+			#meta {
+				width: 100px;
+			}
+			#cover {
+				width: 420px;
+			}
+			#caption {
+				width: 348px;
+				margin-right: 0px;
+			}
+			#caption h1 {
+				font-family: Helvetica, Arial, sans-serif;
+				font-weight: bold;
+				color: {color:Header Text};
+			}
+			#caption h2 {
+				font-style: italic;
+				margin-bottom: 1em;
+			}
+			h3, h4 {
+				font-family: Helvetica, Arial, sans-serif;
+				color: {color:Header Text};
+			}
+			h4 {
+				margin-top: 1em;
+			}
+			#caption #purchase {
+				font-family: Helvetica, Arial, sans-serif;
+				margin-top: 1em;
+			}
+			#page {
+				width: 564px;
+				padding: 0px 188px;
+			}
+			#page p {
+				font-size: 1.5em;
+				line-height: 1.33;
+			}
+			#nav,
+			#footer,
+			#credit {
+				text-align: center;
+				padding: 36px 0px;
+			}
+			#nav,
+			#credit {
+				font-family: Helvetica, Arial, sans-serif;				
+			}
+			#infscr-loading {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+				visibility: hidden;
+			}
+			{CustomCSS}
+		</style>
+		{block:IfInfiniteScrolling}
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+			<script type="text/javascript" src="http://static.tumblr.com/rtiu4y7/qsklo3euj/jquery.infinitescroll.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('#posts').infinitescroll({
+						navSelector  : "#nav",
+						nextSelector : "#nav #next_page",
+						itemSelector : "#posts .post",
+						loadingImg   : "",
+						loadingText  : "",
+						donetext     : "",
+						bufferPx     : 200
+					}, 	function(newBooks) {
+						$(newBooks).hide();
+						$(newBooks).each(function(i) {
+							$(this).delay(i*50).fadeIn(1000);
+						});
+					});
+					$(window).scroll();
+				});
+			</script>
+		{/block:IfInfiniteScrolling}
+	</head>
+	<body class="
+		{block:IndexPage}index{/block:IndexPage}
+		{block:PermalinkPage}permalink{/block:PermalinkPage}
+		{block:TagPage}tag{/block:TagPage}
+		{block:Page}page{/block:Page}">
+		<div id="wrapper">
+			<div id="header">
+
+    <div class="site-name">
+    <h1 class="museum"><a href={BlogURL}>Whitney Museum of American Art</a></h1>
+    <h1 class="hero">Graphic Design</h1>
+</div>
+
+    <div class="nav">
+        <a href="/about">About</a>
+            <a href="/submit">Tags</a>
+            <a href="http://www.whitney.org">whitney.org</a>
+        </div>
+</div>
+
+<section class="clear"></section>
+
+			<ol id="posts">
+				{block:Posts}
+					{block:Photo}
+						<li class="post photo">
+							{block:IndexPage}
+								<table class="post_thumbnail">
+									<tr>
+										<td>
+											{block:IfLinkThumbnailsStraightToAmazon}
+												<a href="{LinkURL}"><img src="{PhotoURL-100}" alt="{PhotoAlt}"></a>
+											{/block:IfLinkThumbnailsStraightToAmazon}
+											
+												<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
+											
+										</td>
+									</tr>
+								</table>
+								<a class="post_title" href="{Permalink}">{Caption}</a>
+							{/block:IndexPage}
+							{block:PermalinkPage}
+								<div id="permalink">
+									<div id="meta">
+										<h3>Posted</h3>
+										<p>{block:Date}{DayOfMonth} {Month} {Year}{/block:Date}</p>
+										{block:HasTags}
+											<h4>Tagged</h4>
+											<ul id="tags">
+												{block:Tags}
+													<li><a href="{TagURL}">{Tag}</a></li>
+												{/block:Tags}
+											</ul>
+										{/block:HasTags}
+									</div>
+									<div id="cover"><a href="{LinkURL}"><img src="{PhotoURL-400}" alt="{PhotoAlt}"></a></div>
+									<div id="caption">
+										{Caption}
+										<p id="purchase"><a href="{LinkURL}">Find on Amazon.com</a></p>
+									</div>
+								</div>
+							{/block:PermalinkPage}
+						</li>
+					{/block:Photo}
+					{block:Text}
+						<li class="post text">
+							{block:PermalinkPage}
+								<div id="page">
+									{Body}
+								</div>
+							{/block:PermalinkPage}
+						</li>
+					{/block:Text}
+				{/block:Posts}
+			</ol>
+			<div id="nav">
+				{block:Pagination}
+					{block:PreviousPage}
+						<a id="prev_page" href="{PreviousPage}">&#171; Previous</a> —
+					{/block:PreviousPage}
+					{CurrentPage} of {TotalPages}
+					{block:NextPage}
+						— <a id="next_page" href="{NextPage}">Next &#187;</a>
+					{/block:NextPage}
+				{/block:Pagination}
+				{block:PermalinkPagination}
+					{block:PreviousPost}
+						<a id="prev_post" href="{PreviousPost}">&#171; Previous</a>
+					{/block:PreviousPost}
+					—
+					{block:NextPost}
+						<a id="next_post" href="{NextPost}">Next &#187;</a>
+					{/block:NextPost}
+				{/block:PermalinkPagination}
+			</div>
+
+		</div>
+	</body>
+</html>
