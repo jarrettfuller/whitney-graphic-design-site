@@ -160,12 +160,9 @@
     .main {
         float: left;
         padding-top: 20px;
-        margin: auto;
         margin-top: 75px;
         }
-    .layout-2col .wrapper, .layout-2col .main {
-			width: 1072px;
-        }
+
         
 /*-------RESPONSIVE LAYOUT----------*/
         
@@ -197,12 +194,15 @@
         	    }
             .layout-2col .wrapper, .layout-2col .main {
             	width: 1072px;
+            	{block:PermalinkPage}
+            	    width: 1032px;
+            	{/block:PermalinkPage}
         	    }
         	#wrapper {
         	    width: 1072px;
-        	    {block:PermalinkPagination}
-        	    width: 692px;
-        	    {/block:PermalinkPagination}
+        	    {block:PermalinkPage}
+            	    width: 1052px;
+            	{/block:PermalinkPage}
         	    }
 
     	    }
@@ -599,8 +599,7 @@
         padding-right: 0px; 
         margin: auto;
     }
-    /*.site-name { margin-left: -10px; }*/
-    /*.nav { margin-right: 10px; }*/
+
     .description { width: 50%; }
     p   { width: 90% }
     .text { {block:SubmitPage}width: 75%;{/block:SubmitPage} }
@@ -655,9 +654,7 @@
     }
         
     .main {
-        {block:IndexPage}
             margin-top: 0px;
-        {/block:IndexPage}
     }
     #content {
         margin-top: 45px;
