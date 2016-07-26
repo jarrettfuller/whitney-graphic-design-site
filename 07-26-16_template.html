@@ -161,9 +161,7 @@
         float: left;
         padding-top: 20px;
         margin: auto;
-        {block:IndexPage}
-            margin-top: 75px;
-        {/block:IndexPage}
+        margin-top: 75px;
         }
     .layout-2col .wrapper, .layout-2col .main {
 			width: 1072px;
@@ -187,10 +185,10 @@
 		        width: 336px;
     	    }
             .layout-2col .wrapper, .layout-2col .main {
-            	width: 720px;
+            	width: 712px;
         	    }
         	#wrapper {
-        	    width: 720px;
+        	    width: 692px;
         	    }
     	    }
     	@media screen and (min-width:1080px) {
@@ -203,7 +201,7 @@
         	#wrapper {
         	    width: 1072px;
         	    {block:PermalinkPagination}
-        	    width: 720px;
+        	    width: 692px;
         	    {/block:PermalinkPagination}
         	    }
 
@@ -211,22 +209,23 @@
             
 /*------------HEADER-------------*/
  
-    #header {
+       #header {
 	    z-index:999999999999999;
-	    position:relative;
         font-weight: bold;
-        padding-bottom: 50px;
         padding-top: 25px;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        {block:IndexPage}
             position: fixed;
             background-color: white;
-            width: 1052px;
-			margin-left: 10px;
-			margin-right: 10px;
+            width: 100%;
 			padding-bottom: 25px;
-		{/block:IndexPage}
+
         }
+    .header {
+        width: 1052px;
+        margin: auto;
+        padding-left: 10px;
+		padding-right: 10px;
+    }
     .hero a {
         color: black;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -594,10 +593,21 @@
     
 @media (min-width: 751px) and (max-width: 1080px) {
 
-    #header { width: 692px; }
+    .header { 
+        width: 692px; 
+        padding-left: 0px; 
+        padding-right: 0px; 
+        margin: auto;
+    }
+    /*.site-name { margin-left: -10px; }*/
+    /*.nav { margin-right: 10px; }*/
     .description { width: 50%; }
     p   { width: 90% }
     .text { {block:SubmitPage}width: 75%;{/block:SubmitPage} }
+    .main { 
+        {block:IndexPage}margin-left: -10px;{/block:IndexPage}
+        width: 692px;
+    }
 }
         
 /*----------------------------*/
@@ -606,16 +616,10 @@
 
 @media (max-width: 750px) {
     #header {
-        width: 350px;
-        border: none;
-        height: 75px;
-        margin-left: 0px;
-        margin-right: 0px;
-        {block:IndexPage} 
             position: relative;
             padding-bottom: 25px;
-        {/block:IndexPage}
         }
+        .header { margin: auto;  width: 350px; padding-left: 20px;}
     .site-name {
         width: 100%;
         padding-bottom: 15px;
@@ -727,10 +731,9 @@
     </head>
     <body class="{block:IndexPage}index-page{/block:IndexPage}{block:PermalinkPage}permalink-page{/block:PermalinkPage} font-{select:Post Body Font} layout-2col background-{select:Background Image Style}">
 
-        <div id="wrapper" class="wrapper">
         
         <div id="header">
-
+<div class="header">
     <div class="site-name">
     <h1 class="museum"><a href={BlogURL}>Whitney Museum of American Art</a></h1>
     <h1 class="hero"><a href={BlogURL}>Graphic Design</a></h1>
@@ -743,9 +746,12 @@
             <a href="/tagged/submitted" class="submit-link-1">⟳</a>
             <a href={BlogURL} class="submit-link-2">⟳</a>
         </div>
+    </div>
 </div>
 
 <section class="clear"></section>
+        
+                <div id="wrapper" class="wrapper">
         
         <div class="main">
         
