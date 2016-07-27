@@ -385,9 +385,9 @@
         }
     a.submit-link-1 {
         text-decoration: none;
-        {block:TagPage}
+        {block:PermalinkPage}
             display:none;
-        {/block:TagPage}
+        {/block:PermalinkPage}
     }
     a.submit-link-2 {
         display: none;
@@ -398,6 +398,11 @@
             padding: 5px;
             padding-top: 3px;
         {/block:TagPage}
+    }
+    .filters {
+        {block:PermalinkPage}
+            display:none;
+        {/block:PermalinkPage}
     }
         
 /*------------FOOTER-------------*/
@@ -684,9 +689,7 @@
         
     a.submit-link-1 {
         text-decoration: none;
-        {block:TagPage}
-            display:none;
-        {/block:TagPage}
+
     }
     a.submit-link-2 {
         display: none;
@@ -796,11 +799,22 @@
         <a href="/about">About</a>
             <a href="/archive" target="_blank">Archive</a>
             <a href="http://www.whitney.org" target="_blank">whitney.org</a>
-            <a href="/tagged/submitted" class="submit-link-1">⟳</a>
-            <a href={BlogURL} class="submit-link-2">⟳</a>
+            <br />
+            
+            
+            <div class="filters">Filter: 
+            <a href="/tagged/submitted" class="submit-link-1">Crowdsourced</a>
+            <a href="/tagged/2014" class="submit-link-1">Studio</a>
+            <a href="{BlogURL}" class="submit-link-1">✕</a></div>
+
+          
+
         </div>
+        
     </div>
+         
 </div>
+
 
 <section class="clear"></section>
         
@@ -827,18 +841,23 @@
         
             {block:Posts}
 				<article id="post-{PostID}" class="post {PostType}{block:PermalinkPage} {block:Date}not-{/block:Date}page{/block:PermalinkPage}">
-								
+	
+	<!-------PAGINATION--------->
+
+<!---	
+
 {block:PermalinkPage}
-
-       <!-------PAGINATION--------->
     {block:PermalinkPagination}
-<ul id="xpages" class="post-page">
-<a href="javascript:history.back()"><img src="http://static.tumblr.com/aoxtg3p/9zooal1mj/x.png"></a>
-</ul>
- <section class="clear"></section>   
-	  {/block:PermalinkPagination}
+    <ul id="xpages" class="post-page">
+    <a href="javascript:history.back()"><img src="http://static.tumblr.com/aoxtg3p/9zooal1mj/x.png"></a>
+    </ul>
+ 
+	 {/block:PermalinkPagination}
+{/block:PermalinkPage}
+    
+<section class="clear"></section>  
 
-    {/block:PermalinkPage}
+--->
                 
         <!-------DESCRIPTION--------->
                 
