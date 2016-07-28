@@ -472,21 +472,25 @@
     margin-top: 5px;
     text-align: right;
     line-height:20px
-    }
+}
 #xpages img {
     width: 15px;
     height: 15px;
 } 
 #xpages a,#xpages span {
     padding:5px;
+        display: none;
     }
     
 #xpages li {
-    display:inline;
+    display:block;
     }
     
 #xpages li.prev:first-child .s {
-    display:none;
+    display:inline;
+    }
+    .close {
+        margin-top: 20px;
     }
     
 .post-page {
@@ -631,6 +635,12 @@
 		width:100%;
 		float: none;
         }
+    #xpages a {
+        display: inline;
+    }
+    .close {
+        display: none;
+    }
         
    /*----------RELATED-----------*/
 
@@ -666,8 +676,7 @@
 
 @media (max-width: 739px) {
     #header {
-            position: relative;
-            padding-bottom: 25px;
+            padding-bottom: 10px;
         }
     .header { margin: auto;  width: 350px; padding-left: 20px;}
     .site-name {
@@ -677,16 +686,21 @@
     .nav {
         width: 100%;
         text-align: left;
-        {block:IndexPage}
-        padding-bottom: 15px;
-        {/block:IndexPage}
+    }
+    .main-nav {
+        width: 50%;
+        float: left;
     }
     .nav a { 
         display: block; 
         padding: 0px; 
         line-height: 16px;
         }  
-        
+    .filters {
+        width: 50%;
+        float: right;
+        margin-top: -20px;
+    }  
     a.submit-link-1 {
         text-decoration: none;
 
@@ -703,7 +717,7 @@
     }
         
     .main {
-            margin-top: 0px;
+            margin-top: 170px;
     }
     #content {
         margin-top: 45px;
@@ -746,10 +760,13 @@
             width: 100%;
         {/block:SubmitPage}
         } 
-#xpages img {
-    width: 16px;
-    height: 16px;
-}
+    #xpages a {
+        display: inline;
+    }
+    .close {
+        display: none;
+    }
+
 
 /*----------RELATED-----------*/
 
@@ -793,19 +810,27 @@
     <h1 class="hero"><a href={BlogURL}>Graphic Design</a></h1>
 </div>
 
-    <div class="nav">
+    <div class="nav"><span class="main-nav">
         <a href="/about">About</a>
             <a href="/archive" target="_blank">Archive</a>
-            <a href="http://www.whitney.org" target="_blank">whitney.org</a>
+            <a href="http://www.whitney.org" target="_blank">whitney.org</a></span>
             <br />
             
-            
-            <div class="filters">Filter: 
-            <a href="/tagged/submitted" class="submit-link-1">Crowdsourced</a>
-            <a href="/tagged/2014" class="submit-link-1">Studio</a>
-            <a href="{BlogURL}" class="submit-link-1">✕</a></div>
-
+            {block:IndexPage}
+            <div class="filters">View: 
+            <a href="{BlogURL}" class="submit-link-1">◉ All</a>
+            <a href="/tagged/submitted" class="submit-link-1">◎ Yours</a>
+            <a href="/tagged/2014" class="submit-link-1">◎ Ours</a>
+            </div>
+            {/block:IndexPage}
           
+                      {block:TagPage}
+            <div class="filters">View: 
+            <a href="{BlogURL}" class="submit-link-1">◎ All</a>
+            <a href="/tagged/submitted" class="submit-link-1">◉ Yours</a>
+            <a href="/tagged/2014" class="submit-link-1">◎ Ours</a>
+            </div>
+            {block:TagPage}
 
         </div>
         
@@ -842,7 +867,7 @@
 	
 	<!-------PAGINATION--------->
 
-<!---	
+	
 
 {block:PermalinkPage}
     {block:PermalinkPagination}
@@ -853,9 +878,9 @@
 	 {/block:PermalinkPagination}
 {/block:PermalinkPage}
     
-<section class="clear"></section>  
 
---->
+
+
                 
         <!-------DESCRIPTION--------->
                 
@@ -863,9 +888,16 @@
         
         <div class="description">
             {block:Caption}{Caption}{/block:Caption}
+            
+              <p>
+    <a href="javascript:history.back()"><img src="http://static.tumblr.com/aoxtg3p/9zooal1mj/x.png" class="close"></a>
+    </p>
+            
           <!-- <p>{block:HasTags} {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a> 
             {/block:Tags}{/block:hasTags}</p> -->
         </div>
+    
+
 {/block:PermalinkPage}
             
                 {block:Photo}
