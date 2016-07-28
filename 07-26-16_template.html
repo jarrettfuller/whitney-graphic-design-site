@@ -247,7 +247,7 @@
         padding-left: 10px;
         font-size: 15px;
         font-weight: normal;
-        text-decoration: underline;
+        text-decoration: none;
         }
     .nav a:hover {
         color: black;
@@ -389,21 +389,25 @@
             display:none;
         {/block:PermalinkPage}
     }
-    a.submit-link-2 {
-        display: none;
-        text-decoration: none;
-        {block:TagPage}
-            display: inline;
-            background-color:lightgrey;
-            padding: 5px;
-            padding-top: 3px;
-        {/block:TagPage}
-    }
+
     .filters {
         {block:PermalinkPage}
             display:none;
         {/block:PermalinkPage}
     }
+    .filters a {
+        border: 1px black solid;
+        padding: 3px;
+        margin: 3px;
+        text-align: center;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+.selected {
+    background-color: lightgrey;
+}
+
+
         
 /*------------FOOTER-------------*/
     
@@ -701,20 +705,20 @@
         float: right;
         margin-top: -20px;
     }  
+    .filters a {
+        display: initial;
+                border: 1px black solid;
+        padding: 3px;
+        margin: 3px;
+        text-align: center;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
     a.submit-link-1 {
         text-decoration: none;
 
     }
-    a.submit-link-2 {
-        display: none;
-        text-decoration: none;
-        {block:TagPage}
-            display: inline;
-            background-color:lightgrey;
-            padding: 5px;
-            padding-top: 3px;
-        {/block:TagPage}
-    }
+
         
     .main {
             margin-top: 170px;
@@ -816,21 +820,12 @@
             <a href="http://www.whitney.org" target="_blank">whitney.org</a></span>
             <br />
             
-            {block:IndexPage}
+
             <div class="filters">View: 
-            <a href="{BlogURL}" class="submit-link-1">◉ All</a>
-            <a href="/tagged/submitted" class="submit-link-1">◎ Yours</a>
-            <a href="/tagged/2014" class="submit-link-1">◎ Ours</a>
+            <a href="{BlogURL}" class="submit-link-1">All</a>
+            <a href="/tagged/submitted" class="submit-link-1">Yours</a>
+            <a href="/tagged/2014" class="submit-link-1">Ours</a>
             </div>
-            {/block:IndexPage}
-          
-                      {block:TagPage}
-            <div class="filters">View: 
-            <a href="{BlogURL}" class="submit-link-1">◎ All</a>
-            <a href="/tagged/submitted" class="submit-link-1">◉ Yours</a>
-            <a href="/tagged/2014" class="submit-link-1">◎ Ours</a>
-            </div>
-            {block:TagPage}
 
         </div>
         
@@ -1027,6 +1022,15 @@
 	{block:IfInfiniteScrolling}<script src="//static.tumblr.com/anzluor/ycPn74dop/jquery.infinitescroll.min.js"></script>{/block:IfInfiniteScrolling}
     <script src="//static.tumblr.com/anzluor/lmen89y2n/impulse.min.js"></script>
 
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+       });
+});
+</script>
 
     </body>
 </html>
