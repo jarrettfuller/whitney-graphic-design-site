@@ -415,9 +415,10 @@
             background-color: white;
         {/block:TagPage}
     }
-
-.selected {
-    background-color: lightgrey;
+    .selected {
+        {block:TagPage}
+            background-color: lightgrey;
+        {/block:TagPage}
 }
 
 
@@ -893,7 +894,7 @@
                 
         <!-------DESCRIPTION--------->
                 
-                 {block:PermalinkPage}    
+                 {block:PermalinkPage}    {block:Date}
         
         <div class="description">
             {block:Caption}{Caption}{/block:Caption}
@@ -906,7 +907,7 @@
             {/block:Tags}{/block:hasTags}</p> -->
         </div>
     
-
+    {/block:Date}
 {/block:PermalinkPage}
             
                 {block:Photo}
