@@ -160,7 +160,7 @@
     .main {
         float: left;
         padding-top: 20px;
-        margin-top: 75px;
+        margin-top: 95px;
         }
 
         
@@ -217,7 +217,7 @@
             position: fixed;
             background-color: white;
             width: 100%;
-			padding-bottom: 25px;
+			padding-bottom: 10px;
 
         }
     .header {
@@ -248,6 +248,7 @@
         font-size: 15px;
         font-weight: normal;
         text-decoration: none;
+        display: block;
         }
     .nav a:hover {
         color: black;
@@ -391,33 +392,28 @@
     }
 
     .filters {
-
+        padding-top: 5px;
+        /*text-transform: uppercase;*/
+        /*font-size: 13px;*/
         {block:PermalinkPage}
             display:none;
         {/block:PermalinkPage}
     }
     .filters a {
-        border: 1px black solid;
-        padding: 3px;
-        margin: 3px;
-        text-align: center;
-        font-size: 11px;
-        text-transform: uppercase;
+        margin: 5px;
+        font-weight: normal;
     }
-    .filters a:first-child {
-        padding-left: 3px;
-        }
     .filter-index {
         {block:IndexPage}
-            background-color: lightgrey;
+            border-bottom: 1px solid black;
         {/block:IndexPage}
         {block:TagPage}
-            background-color: white;
+           border-bottom: 0px;
         {/block:TagPage}
     }
     .selected {
         {block:TagPage}
-            background-color: lightgrey;
+            border-bottom: 1px solid black
         {/block:TagPage}
 }
 
@@ -706,36 +702,19 @@
         text-align: left;
     }
     .main-nav {
-        width: 40%;
-        float: left;
+        width: 100%;
     }
     .nav a { 
-        display: block; 
+        display: inline; 
+        margin-right: 10px;
         padding: 0px; 
         line-height: 16px;
         }  
     .filters {
-        width: 55%;
-        float: right;
-        margin-top: -20px;
+        width: 100%;
     }  
-    .filters a {
-        display: initial;
-                border: 1px black solid;
-        padding: 3px;
-        margin: 3px;
-        text-align: center;
-        font-size: 11px;
-        text-transform: uppercase;
-    }
-    a.submit-link-1 {
-        text-decoration: none;
-
-    }
-
-        
     .main {
-            margin-top: 170px;
+            margin-top: 145px;
     }
     #content {
         margin-top: 45px;
@@ -826,6 +805,13 @@
     <div class="site-name">
     <h1 class="museum"><a href={BlogURL}>Whitney Museum of American Art</a></h1>
     <h1 class="hero"><a href={BlogURL}>Graphic Design</a></h1>
+    
+        <div class="filters">View: 
+            <a href="http://whitneygd.tumblr.com" class="filter-index">All</a>
+            <a href="/tagged/submitted">Yours</a>
+            <a href="/tagged/2014">Ours</a>
+            </div>
+    
 </div>
 
     <div class="nav"><span class="main-nav">
@@ -835,12 +821,7 @@
             <br />
             
 
-            <div class="filters">View: 
-            <a href="http://whitneygd.tumblr.com" class="filter-index">All</a>
 
-            <a href="/tagged/submitted">Yours</a>
-            <a href="/tagged/2014">Ours</a>
-            </div>
 
         </div>
         
