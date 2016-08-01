@@ -391,6 +391,7 @@
     }
 
     .filters {
+
         {block:PermalinkPage}
             display:none;
         {/block:PermalinkPage}
@@ -403,6 +404,18 @@
         font-size: 11px;
         text-transform: uppercase;
     }
+    .filters a:first-child {
+        padding-left: 3px;
+        }
+    .filter-index {
+        {block:IndexPage}
+            background-color: lightgrey;
+        {/block:IndexPage}
+        {block:TagPage}
+            background-color: white;
+        {/block:TagPage}
+    }
+
 .selected {
     background-color: lightgrey;
 }
@@ -692,7 +705,7 @@
         text-align: left;
     }
     .main-nav {
-        width: 50%;
+        width: 40%;
         float: left;
     }
     .nav a { 
@@ -701,7 +714,7 @@
         line-height: 16px;
         }  
     .filters {
-        width: 50%;
+        width: 55%;
         float: right;
         margin-top: -20px;
     }  
@@ -822,9 +835,10 @@
             
 
             <div class="filters">View: 
-            <a href="{BlogURL}" class="submit-link-1">All</a>
-            <a href="/tagged/submitted" class="submit-link-1">Yours</a>
-            <a href="/tagged/2014" class="submit-link-1">Ours</a>
+            <a href="http://whitneygd.tumblr.com" class="filter-index">All</a>
+
+            <a href="/tagged/submitted">Yours</a>
+            <a href="/tagged/2014">Ours</a>
             </div>
 
         </div>
