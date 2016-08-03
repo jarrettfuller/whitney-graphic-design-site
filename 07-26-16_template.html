@@ -45,10 +45,6 @@
         <meta name="if:Use Real Dates" content="0">
         {/block:Hidden}
         
-        <!--[if lt IE 9]><script src="//static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script><![endif]-->
-        
-        <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">-->
-
         
         <style type="text/css">
         
@@ -160,7 +156,7 @@
     .main {
         float: left;
         padding-top: 20px;
-        margin-top: 95px;
+        margin-top: 100px;
         }
 
         
@@ -232,30 +228,26 @@
         font-weight: normal;
         }
     .site-name {
-        width: 50%;
+        margin-right: 70px;
         float: left;
         }
     .nav {
-        width: 50%;
-        float: right;
-        text-align: right;
+        text-align: left;
         padding-bottom: 10px;
         }
     .nav a {
+        display: block;
+    }
+    .main-nav a {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: black;
-        padding-left: 10px;
         font-size: 15px;
         font-weight: normal;
-        text-decoration: none;
-        display: block;
         }
-    .nav a:hover {
-        color: black;
-        }
-    .nav a:first-child {
-        padding-left: 0px;
-        }
+    .main-nav {
+        float: left;
+        margin-right: 70px;
+    }
     .title {
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -335,14 +327,6 @@
     .post-index-meta a {
         color: rgba({RGBcolor:Post Text}, 0.5);
         }
-    .tag {
-        margin-right: 10px;
-        text-transform: capitalize;
-        border-bottom: 1px #999 solid;
-        }
-    .tag:hover {
-        color: black;
-        }
     .description {
         float: left;
         width: 264px;
@@ -392,28 +376,25 @@
     }
 
     .filters {
-        padding-top: 5px;
-        /*text-transform: uppercase;*/
-        /*font-size: 13px;*/
         {block:PermalinkPage}
             display:none;
         {/block:PermalinkPage}
     }
     .filters a {
-        margin: 5px;
         font-weight: normal;
+        opacity: .4;
     }
-    .filter-index {
+    a.filter-index {
         {block:IndexPage}
-            border-bottom: 1px solid black;
+            opacity: 1;
         {/block:IndexPage}
         {block:TagPage}
-           border-bottom: 0px;
+           opacity: .4;
         {/block:TagPage}
     }
-    .selected {
+    a.selected {
         {block:TagPage}
-            border-bottom: 1px solid black
+            opacity: 1;
         {/block:TagPage}
 }
 
@@ -655,6 +636,14 @@
     .close {
         display: none;
     }
+    .filters {
+        display: block;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+    .divider {
+        display: none;
+    }
         
    /*----------RELATED-----------*/
 
@@ -695,23 +684,26 @@
     .header { margin: auto;  width: 350px; padding-left: 20px;}
     .site-name {
         width: 100%;
-        padding-bottom: 15px;
+        padding-bottom: 0px;
     }
     .nav {
         width: 100%;
         text-align: left;
     }
     .main-nav {
-        width: 100%;
+        width: 40%;
+        float: left;
+        margin-top: -25px;
     }
     .nav a { 
-        display: inline; 
         margin-right: 10px;
         padding: 0px; 
         line-height: 16px;
         }  
     .filters {
-        width: 100%;
+        width: 40%;
+        float: right;
+        margin-top: -25px;
     }  
     .main {
             margin-top: 145px;
@@ -805,23 +797,25 @@
     <div class="site-name">
     <h1 class="museum"><a href={BlogURL}>Whitney Museum of American Art</a></h1>
     <h1 class="hero"><a href={BlogURL}>Graphic Design</a></h1>
-    
-        <div class="filters">View: 
-            <a href="http://whitneygd.tumblr.com" class="filter-index">All</a>
-            <a href="/tagged/submitted">Yours</a>
-            <a href="/tagged/2014">Ours</a>
-            </div>
-    
-</div>
+    <br>
+    <br>
 
-    <div class="nav"><span class="main-nav">
+    </div>
+
+    <div class="nav">
+    
+        <div class="main-nav">
         <a href="/about">About</a>
             <a href="/archive" target="_blank">Archive</a>
-            <a href="http://www.whitney.org" target="_blank">whitney.org</a></span>
-            <br />
-            
-
-
+            <a href="http://www.whitney.org" target="_blank">whitney.org</a>
+                <br>
+            </div>
+    
+            <div class="filters">View: 
+            <a href="http://whitneygd.tumblr.com" class="filter-index">All</a>
+            <a href="/tagged/submitted">Yours</a>
+            <a href="/tagged/2014">Ours</a>  
+            </div>
 
         </div>
         
